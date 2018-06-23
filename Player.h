@@ -11,7 +11,7 @@ public:
 	Player();
 	Player(int RACE, int WEAPON);
 	~Player();
-	int Strike(Weapon *w, Player &p, Enemy *e); //////мюохяюрэ апнмч!!!!//////онопнанбюрэ ядекюрэ хмбемрюпэ!!!!///////
+	int Strike(Weapon *w, Player &p, Enemy *e); //////п²п░п÷п≤п║п░п╒п╛ п▒п═п·п²п╝!!!!//////п║п■п∙п⌡п░п╒п╛ п≤п²п▓п∙п²п╒п░п═п╛!!!!///////
 	void GetInfo();
 	int GetMP();
 	int GetSP();

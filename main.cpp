@@ -25,30 +25,30 @@ int main()
 	restart:
 	///////////////////////
 
-	std::cout << "Âûáåðèòå ðàñó:\n1 - Îðê\n2 - ×åëîâåê\n3 - Ýëüô\n";
+	std::cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ñ€Ð°ÑÑƒ:\n1 - ÐžÑ€Ðº\n2 - Ð§ÐµÐ»Ð¾Ð²ÐµÐº\n3 - Ð­Ð»ÑŒÑ„\n";
 	std::cin >> r;
 
 	while (r < 1 || r > 3)
 	{
-		std::cout << "Ââåäèòå êîððåêòíîå çíà÷åíèå!" << std::endl;
+		std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ!" << std::endl;
 		std::cin >> r;
 	}
 
-	std::cout << "\nÂûáåðèòå îðóæèå:\n1 - Ìå÷\n2 - Áóëàâà\n3 - Êíèãà çàêëèíàíèé\n";
+	std::cout << "\nÐ’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¾Ñ€ÑƒÐ¶Ð¸Ðµ:\n1 - ÐœÐµÑ‡\n2 - Ð‘ÑƒÐ»Ð°Ð²Ð°\n3 - ÐšÐ½Ð¸Ð³Ð° Ð·Ð°ÐºÐ»Ð¸Ð½Ð°Ð½Ð¸Ð¹\n";
 	std::cin >> w;
 
 	while (w < 1 || w > 3)
 	{
-		std::cout << "Ââåäèòå êîððåêòíîå çíà÷åíèå!" << std::endl;
+		std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ!" << std::endl;
 		std::cin >> w;
 	}
 
 	switch (w)
 	{
-	case ChooseSword:				//ÇÀÌÅÍÈÒÜ//
+	case ChooseSword:				//Ð—ÐÐœÐ•ÐÐ˜Ð¢Ð¬//
 		weapon = &s;
 		break;
-	case ChooseMace:				   //ÍÀ//
+	case ChooseMace:				   //ÐÐ//
 		weapon = &m;
 		break;
 	case ChooseSpellBook:		//WEAPON *? = new ??//
@@ -66,7 +66,7 @@ int main()
 	std::cin >> nww;
 	if (nww == 1)
 	{
-		std::cout << "\nÂûáåðèòå îðóæèå:\n1 - Ìå÷\n2 - Áóëàâà\n3 - Êíèãà çàêëèíàíèé\n";
+		std::cout << "\nÐ’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¾Ñ€ÑƒÐ¶Ð¸Ðµ:\n1 - ÐœÐµÑ‡\n2 - Ð‘ÑƒÐ»Ð°Ð²Ð°\n3 - ÐšÐ½Ð¸Ð³Ð° Ð·Ð°ÐºÐ»Ð¸Ð½Ð°Ð½Ð¸Ð¹\n";
 		std::cin >> w;
 		switch (w)
 		{
@@ -101,9 +101,11 @@ int main()
 		case 3:
 			enemy = new Bear;
 			break;
+			default:
+			    enemy = nullptr;
 		}
-		std::cout << "\nÍà âàñ íàïàë " << enemy->GetName() << "!" << std::endl;
-		std::cout << "\n×òî äåëàòü?\n1 - Óäàðèòü\n2 - Ïîïðîáîâàòü óáåæàòü (øàíñ 50%)\n3 - Ïîëó÷èòü èíôîðìàöèþ î ñåáå\n4 - Ïîëó÷èòü èíôîðìàöèþ î ïðîòèâíèêå\n5 - Ñäåëàòü ñýïïóêó\n";
+		std::cout << "\nÐÐ° Ð²Ð°Ñ Ð½Ð°Ð¿Ð°Ð» " << enemy->GetName() << "!" << std::endl;
+		std::cout << "\nÐ§Ñ‚Ð¾ Ð´ÐµÐ»Ð°Ñ‚ÑŒ?\n1 - Ð£Ð´Ð°Ñ€Ð¸Ñ‚ÑŒ\n2 - ÐŸÐ¾Ð¿Ñ€Ð¾Ð±Ð¾Ð²Ð°Ñ‚ÑŒ ÑƒÐ±ÐµÐ¶Ð°Ñ‚ÑŒ (ÑˆÐ°Ð½Ñ 50%)\n3 - ÐŸÐ¾Ð»ÑƒÑ‡Ð¸Ñ‚ÑŒ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ ÑÐµÐ±Ðµ\n4 - ÐŸÐ¾Ð»ÑƒÑ‡Ð¸Ñ‚ÑŒ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ Ð¿Ñ€Ð¾Ñ‚Ð¸Ð²Ð½Ð¸ÐºÐµ\n5 - Ð¡Ð´ÐµÐ»Ð°Ñ‚ÑŒ ÑÑÐ¿Ð¿ÑƒÐºÑƒ\n";
 		std::cin >> w;
 		while (enemy->GetHP() > 0)
 		{
@@ -112,27 +114,27 @@ int main()
 			case 1:
 				if (p.GetSP() >= weapon->GetSPD() && p.GetMP() >= weapon->GetMPD())
 				{
-					std::cout << "\nÂû áüåòå " << enemy->GetName() << " íàíîñÿ " << p.Strike(weapon, p, enemy) << " óðîíà!" << std::endl;
+					std::cout << "\nÐ’Ñ‹ Ð±ÑŒÐµÑ‚Ðµ " << enemy->GetName() << " Ð½Ð°Ð½Ð¾ÑÑ " << p.Strike(weapon, p, enemy) << " ÑƒÑ€Ð¾Ð½Ð°!" << std::endl;
 					if (enemy->GetHP() > 0)
-						std::cout << "\nÓ ïðîòèâíèêà îñòàëîñü " << enemy->GetHP() << " åä. çäîðîâüÿ" << std::endl;
+						std::cout << "\nÐ£ Ð¿Ñ€Ð¾Ñ‚Ð¸Ð²Ð½Ð¸ÐºÐ° Ð¾ÑÑ‚Ð°Ð»Ð¾ÑÑŒ " << enemy->GetHP() << " ÐµÐ´. Ð·Ð´Ð¾Ñ€Ð¾Ð²ÑŒÑ" << std::endl;
 				}
 				else
 				{
 					if (p.GetSP() < weapon->GetSPD())
-						std::cout << "\nÓ âàñ íå õâàòàåò âûíîñëèâîñòè!" << std::endl;
+						std::cout << "\nÐ£ Ð²Ð°Ñ Ð½Ðµ Ñ…Ð²Ð°Ñ‚Ð°ÐµÑ‚ Ð²Ñ‹Ð½Ð¾ÑÐ»Ð¸Ð²Ð¾ÑÑ‚Ð¸!" << std::endl;
 					if (p.GetMP() < weapon->GetMPD())
-						std::cout << "Ó âàñ íå õâàòàåò ìàíû!" << std::endl << std::endl;
-					std::cout << "Ó ïðîòèâíèêà îñòàëîñü " << enemy->GetHP() << " åä. çäîðîâüÿ" << std::endl;
+						std::cout << "Ð£ Ð²Ð°Ñ Ð½Ðµ Ñ…Ð²Ð°Ñ‚Ð°ÐµÑ‚ Ð¼Ð°Ð½Ñ‹!" << std::endl << std::endl;
+					std::cout << "Ð£ Ð¿Ñ€Ð¾Ñ‚Ð¸Ð²Ð½Ð¸ÐºÐ° Ð¾ÑÑ‚Ð°Ð»Ð¾ÑÑŒ " << enemy->GetHP() << " ÐµÐ´. Ð·Ð´Ð¾Ñ€Ð¾Ð²ÑŒÑ" << std::endl;
 				}
 				if (enemy->GetHP() <= 0)
 				{
-					std::cout << '\n' << enemy->GetName() << " ïîâåðæåí!" << " Ïîëó÷åíî " << enemy->GetXP(p) << " îïûòà." << std::endl;
+					std::cout << '\n' << enemy->GetName() << " ÐŸÐ¾Ð²ÐµÑ€Ð¶ÐµÐ½!" << " ÐŸÐ¾Ð»ÑƒÑ‡ÐµÐ½Ð¾ " << enemy->GetXP(p) << " Ð¾Ð¿Ñ‹Ñ‚Ð°." << std::endl;
 					delete enemy;
 					enemy = nullptr;
 				}
 				else
 				{
-					std::cout << '\n' << enemy->GetName() << " áüåò â îòâåò íàíîñÿ " << enemy->Strike(p) << " óðîíà!" << std::endl;
+					std::cout << '\n' << enemy->GetName() << " Ð±ÑŒÐµÑ‚ Ð² Ð¾Ñ‚Ð²ÐµÑ‚ Ð½Ð°Ð½Ð¾ÑÑ " << enemy->Strike(p) << " ÑƒÑ€Ð¾Ð½Ð°!" << std::endl;
 					if (p.GetHP() <= 0)
 					{
 						death = true;
@@ -143,14 +145,14 @@ int main()
 				if (rand() % 2)
 				{
 					dodge = true;
-					std::cout << "\nÂàì óäàëîñü ñêðûòüñÿ!" << std::endl;
+					std::cout << "\nÐ’Ð°Ð¼ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ ÑÐºÑ€Ñ‹Ñ‚ÑŒÑÑ!" << std::endl;
 					delete enemy;
 					enemy = nullptr;
 				}
 				else
 				{
 					dodge = false;
-					std::cout << "\nÂàì íå óäàëîñü ñêðûòüñÿ!" << std::endl;
+					std::cout << "\nÐ’Ð°Ð¼ Ð½Ðµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ ÑÐºÑ€Ñ‹Ñ‚ÑŒÑÑ!" << std::endl;
 				}
 				break;
 			case 3:
@@ -175,7 +177,7 @@ int main()
 				break;
 			else
 			{
-				std::cout << "\n×òî äåëàòü?\n1 - Óäàðèòü\n2 - Ïîïðîáîâàòü óáåæàòü (øàíñ 50%)\n3 - Ïîëó÷èòü èíôîðìàöèþ î ñåáå\n4 - Ïîëó÷èòü èíôîðìàöèþ î ïðîòèâíèêå\n5 - Ñäåëàòü ñýïïóêó\n";
+				std::cout << "\nÐ§Ñ‚Ð¾ Ð´ÐµÐ»Ð°Ñ‚ÑŒ?\n1 - Ð£Ð´Ð°Ñ€Ð¸Ñ‚ÑŒ\n2 - ÐŸÐ¾Ð¿Ñ€Ð¾Ð±Ð¾Ð²Ð°Ñ‚ÑŒ ÑƒÐ±ÐµÐ¶Ð°Ñ‚ÑŒ (ÑˆÐ°Ð½Ñ 50%)\n3 - ÐŸÐ¾Ð»ÑƒÑ‡Ð¸Ñ‚ÑŒ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ ÑÐµÐ±Ðµ\n4 - ÐŸÐ¾Ð»ÑƒÑ‡Ð¸Ñ‚ÑŒ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ Ð¿Ñ€Ð¾Ñ‚Ð¸Ð²Ð½Ð¸ÐºÐµ\n5 - Ð¡Ð´ÐµÐ»Ð°Ñ‚ÑŒ ÑÑÐ¿Ð¿ÑƒÐºÑƒ\n";
 				std::cin >> w;
 			}
 		}
@@ -183,12 +185,12 @@ int main()
 
 	if (death)
 	{
-		std::cout << "\n\t\t=================ÂÛ ÏÎÃÈÁËÈ!!!=================\n" << std::endl << std::endl;
-		std::cout << "Íà÷àòü çàíîâî? (1 - Äà, 2 - Íåò)" << std::endl;
+		std::cout << "\n\t\t=================Ð’Ð« ÐŸÐžÐ“Ð˜Ð‘Ð›Ð˜!!!=================\n" << std::endl << std::endl;
+		std::cout << "ÐÐ°Ñ‡Ð°Ñ‚ÑŒ Ð·Ð°Ð½Ð¾Ð²Ð¾? (1 - Ð”Ð°, 2 - Ð½ÐµÑ‚)" << std::endl;
 		std::cin >> w;
 		while (w < 1 || w > 2)
 		{
-			std::cout << "Ââåäèòå êîððåêòíîå çíà÷åíèå!" << std::endl;
+			std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ!" << std::endl;
 			std::cin >> w;
 		}
 		if (w == 1)

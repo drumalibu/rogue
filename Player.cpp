@@ -24,7 +24,7 @@ Player::Player(int RACE, int WEAPON)
 	NEXTLVLXP = 1000;
 	if (RACE == Orc)
 	{
-		this->RACE = "Орк";
+		this->RACE = "РћСЂРє";
 		HP = 150;
 		MAXHP = 150;
 		MP = 30;
@@ -35,7 +35,7 @@ Player::Player(int RACE, int WEAPON)
 	}
 	else if (RACE == Human)
 	{
-		this->RACE = "Человек";
+		this->RACE = "Р§РµР»РѕРІРµРє";
 		HP = 110;
 		MAXHP = 110;
 		MP = 50;
@@ -45,7 +45,7 @@ Player::Player(int RACE, int WEAPON)
 	}
 	else if (RACE == Elf)
 	{
-		this->RACE = "Эльф";
+		this->RACE = "Р­Р»СЊС„";
 		HP = 80;
 		MAXHP = 80;
 		MP = 80;
@@ -56,13 +56,13 @@ Player::Player(int RACE, int WEAPON)
 	switch (WEAPON)
 	{
 	case ChooseSword:
-		this->WEAPON = "Меч";
+		this->WEAPON = "РњРµС‡";
 		break;
 	case ChooseMace:
-		this->WEAPON = "Булава";
+		this->WEAPON = "Р‘СѓР»Р°РІР°";
 		break;
 	case ChooseSpellBook:
-		this->WEAPON = "Книга заклинаний";
+		this->WEAPON = "РљРЅРёРіР° Р·Р°РєР»РёРЅР°РЅРёР№";
 		break;
 	}
 }
@@ -85,13 +85,13 @@ int Player::Strike(Weapon *w, Player &p, Enemy *e)
 
 void Player::GetInfo()
 {
-	std::cout << "Раса: " << RACE << std::endl;
-	std::cout << "Уровень: " << LVL << std::endl;
-	std::cout << "Опыт: " << XP << " / " << NEXTLVLXP << std::endl;
-	std::cout << "Здоровье: " << HP << " / " << MAXHP << std::endl;
-	std::cout << "Мана: " << MP << " / " << MAXMP << std::endl;
-	std::cout << "Выносливость: " << SP << " / " << MAXSP << std::endl;
-	std::cout << "Оружие: " << WEAPON << std::endl;
+	std::cout << "Р Р°СЃР°: " << RACE << std::endl;
+	std::cout << "РЈСЂРѕРІРµРЅСЊ: " << LVL << std::endl;
+	std::cout << "РћРїС‹С‚: " << XP << " / " << NEXTLVLXP << std::endl;
+	std::cout << "Р—РґРѕСЂРѕРІСЊРµ: " << HP << " / " << MAXHP << std::endl;
+	std::cout << "РњР°РЅР°: " << MP << " / " << MAXMP << std::endl;
+	std::cout << "Р’С‹РЅРѕСЃР»РёРІРѕСЃС‚СЊ: " << SP << " / " << MAXSP << std::endl;
+	std::cout << "РћСЂСѓР¶РёРµ: " << WEAPON << std::endl;
 }
 
 void Player::SetMP(int value)
@@ -130,19 +130,19 @@ void Player::SetXP(Enemy *e)
 	if (XP >= NEXTLVLXP)
 	{
 		LVL += 1;
-		if (RACE == "Орк")
+		if (RACE == "РћСЂРє")
 		{
 			MAXHP += 30;
 			MAXSP += 30;
 			MAXMP += 10;
 		}
-		else if (RACE == "Человек")
+		else if (RACE == "Р§РµР»РѕРІРµРє")
 		{
 			MAXHP += 20;
 			MAXSP += 20;
 			MAXMP += 15;
 		}
-		else if (RACE == "Эльф")
+		else if (RACE == "Р­Р»СЊС„")
 		{
 			MAXHP += 15;
 			MAXSP += 15;

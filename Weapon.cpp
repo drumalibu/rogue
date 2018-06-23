@@ -37,7 +37,7 @@ int Weapon::GetDMG()
 
 Sword::Sword()
 {
-	Name = "Меч";
+	Name = "РњРµС‡";
 	DMG = 15;
 	SPD = 20;
 	MPD = 0;
@@ -50,7 +50,7 @@ Sword::~Sword()
 
 Mace::Mace()
 {
-	Name = "Булава";
+	Name = "Р‘СѓР»Р°РІР°";
 	DMG = 25;
 	SPD = 30;
 	MPD = 0;
@@ -63,7 +63,7 @@ Mace::~Mace()
 
 SpellBook::SpellBook()
 {
-	Name = "Книга заклинаний";
+	Name = "РљРЅРёРіР° Р·Р°РєР»РёРЅР°РЅРёР№";
 	DMG = 30;
 	SPD = 10;
 	MPD = 15;

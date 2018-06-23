@@ -5,15 +5,15 @@
 
 void Enemy::GetInfo()
 {
-	std::cout << "Ïðîòèâíèê: " << NAME << std::endl;
-	std::cout << "Çäîðîâüå: " << HP << std::endl;
-	std::cout << "Óðîí: " << DMG << std::endl;
-	std::cout << "Îïûò: " << XP << std::endl;
+	std::cout << "ÐŸÑ€Ð¾Ñ‚Ð¸Ð²Ð½Ð¸Ðº: " << NAME << std::endl;
+	std::cout << "Ð—Ð´Ð¾Ñ€Ð¾Ð²ÑŒÐµ: " << HP << std::endl;
+	std::cout << "Ð£Ñ€Ð¾Ð½: " << DMG << std::endl;
+	std::cout << "ÐžÐ¿Ñ‹Ñ‚: " << XP << std::endl;
 }
 
 Spider::Spider()
 {
-	NAME = "Ïàóê";
+	NAME = "ÐŸÐ°ÑƒÐº";
 	HP = 15;
 	DMG = 8;
 	XP = 200;
@@ -53,7 +53,7 @@ int Spider::GetXP(Player &p)
 
 Wolf::Wolf()
 {
-	NAME = "Âîëê";
+	NAME = "Ð’Ð¾Ð»Ðº";
 	HP = 25;
 	DMG = 10;
 	XP = 300;
@@ -93,7 +93,7 @@ int Wolf::GetXP(Player &p)
 
 Bear::Bear()
 {
-	NAME = "Ìåäâåäü";
+	NAME = "ÐœÐµÐ´Ð²ÐµÐ´ÑŒ";
 	HP = 35;
 	DMG = 15;
 	XP = 400;

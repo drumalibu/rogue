@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/var/c/rouge/Enemy.h
+string
+-
+
+/var/c/rouge/Player.h
+string
+-
+
+/var/c/rouge/Weapon.h
+string
+-
+
+/var/c/rouge/main.cpp
+Player.h
+/var/c/rouge/Player.h
+Weapon.h
+/var/c/rouge/Weapon.h
+Enemy.h
+/var/c/rouge/Enemy.h
+iostream
+-
+time.h
+-
+
