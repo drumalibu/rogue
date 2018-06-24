@@ -1,9 +1,8 @@
-#include "Player.h"
-#include "Weapon.h"
-#include "Enemy.h"
+#include "Headers/Player.h"
+#include "Headers/Weapon.h"
+#include "Headers/Enemy.h"
 #include <iostream>
 #include <time.h>
-//#include <conio.h>
 
 int main()
 {
@@ -14,8 +13,8 @@ int main()
 	//int nww;
 	bool dodge, death = false;
 
-	Weapon *weapon;
-	Enemy *enemy;
+	Weapon* weapon = nullptr;
+	Enemy* enemy = nullptr;
 
 	Mace m;
 	Sword s;
@@ -53,6 +52,9 @@ int main()
 		break;
 	case ChooseSpellBook:		//WEAPON *? = new ??//
 		weapon = &sb;
+		break;
+	default:
+		weapon = nullptr;
 		break;
 	}
 	
@@ -101,8 +103,8 @@ int main()
 		case 3:
 			enemy = new Bear;
 			break;
-			default:
-			    enemy = nullptr;
+		default:
+			enemy = nullptr;
 		}
 		std::cout << "\nНа вас напал " << enemy->GetName() << "!" << std::endl;
 		std::cout << "\nЧто делать?\n1 - Ударить\n2 - Попробовать убежать (шанс 50%)\n3 - Получить информацию о себе\n4 - Получить информацию о противнике\n5 - Сделать сэппуку\n";
@@ -200,6 +202,5 @@ int main()
 		}
 	}
 
-	system("pause");
 	return 0;
 }

@@ -1,5 +1,4 @@
 #pragma once
-#include <string>
 
 class Player;
 
@@ -8,18 +7,18 @@ class Weapon;
 class Enemy
 {
 public:
-	virtual std::string GetName() = 0;
+	virtual const char* GetName() = 0;
 	virtual int GetHP() = 0;
-	virtual int Strike(Player &p) = 0;
+	virtual int Strike(Player& p) = 0;
 	virtual void SetHP(int value) = 0;
-	virtual int GetXP(Player &p) = 0; /////////////œŒœ–Œ¡Œ¬¿“‹ Õ≈ œ≈–≈Œœ–≈ƒ≈Àﬂ“‹!!!/////////////////
+	virtual int GetXP(Player& p) = 0; /////////////–ü–æ–ø—Ä–æ–±–æ–≤–∞—Ç—å –Ω–µ –ø–µ—Ä–µ–æ–ø—Ä–µ–¥–µ–ª—è—Ç—å!!!/////////////////
 	void GetInfo();
 	friend class Player;
 protected:
 	short HP;
 	short DMG;
 	short XP;
-	std::string NAME;
+	const char* NAME;
 };
 
 class Spider : public Enemy
@@ -27,11 +26,11 @@ class Spider : public Enemy
 public:
 	Spider();
 	virtual ~Spider();
-	int Strike(Player &p) override;
-	std::string GetName() override;
+	int Strike(Player& p) override;
+	const char* GetName() override;
 	int GetHP() override;
 	void SetHP(int value) override;
-	int GetXP(Player &p) override;
+	int GetXP(Player& p) override;
 };
 
 class Wolf : public Enemy
@@ -39,11 +38,11 @@ class Wolf : public Enemy
 public:
 	Wolf();
 	virtual ~Wolf();
-	int Strike(Player &p) override;
-	std::string GetName() override;
+	int Strike(Player& p) override;
+	const char* GetName() override;
 	int GetHP() override;
 	void SetHP(int value) override;
-	int GetXP(Player &p) override;
+	int GetXP(Player& p) override;
 };
 
 class Bear : public Enemy
@@ -51,9 +50,9 @@ class Bear : public Enemy
 public:
 	Bear();
 	virtual ~Bear();
-	int Strike(Player &p) override;
-	std::string GetName() override;
+	int Strike(Player& p) override;
+	const char* GetName() override;
 	int GetHP() override;
 	void SetHP(int value) override;
-	int GetXP(Player &p) override;
+	int GetXP(Player& p) override;
 };

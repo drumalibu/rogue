@@ -24,13 +24,14 @@ Spider::~Spider()
 
 }
 
-int Spider::Strike(Player &p)
+int Spider::Strike(Player& p)
 {
-	p.SetHP(-DMG);
-	return DMG;
+	int damage = DMG - (DMG * (p.DMGREDUCTION / 100));
+	p.SetHP(-damage);
+	return damage;
 }
 
-std::string Spider::GetName()
+const char* Spider::GetName()
 {
 	return this->NAME;
 }
@@ -45,7 +46,7 @@ void Spider::SetHP(int value)
 	HP -= value;
 }
 
-int Spider::GetXP(Player &p)
+int Spider::GetXP(Player& p)
 {
 	p.SetXP(this);
 	return this->XP;
@@ -64,13 +65,14 @@ Wolf::~Wolf()
 	
 }
 
-int Wolf::Strike(Player &p)
+int Wolf::Strike(Player& p)
 {
-	p.SetHP(-DMG);
-	return DMG;
+	int damage = DMG - (DMG * (p.DMGREDUCTION / 100));
+	p.SetHP(-damage);
+	return damage;
 }
 
-std::string Wolf::GetName()
+const char* Wolf::GetName()
 {
 	return this->NAME;
 }
@@ -85,7 +87,7 @@ void Wolf::SetHP(int value)
 	HP -= value;
 }
 
-int Wolf::GetXP(Player &p)
+int Wolf::GetXP(Player& p)
 {
 	p.SetXP(this);
 	return this->XP;
@@ -104,13 +106,14 @@ Bear::~Bear()
 	
 }
 
-int Bear::Strike(Player &p)
+int Bear::Strike(Player& p)
 {
-	p.SetHP(-DMG);
-	return DMG;
+	int damage = DMG - (DMG * (p.DMGREDUCTION / 100));
+	p.SetHP(-damage);
+	return damage;
 }
 
-std::string Bear::GetName()
+const char* Bear::GetName()
 {
 	return this->NAME;
 }
@@ -125,7 +128,7 @@ void Bear::SetHP(int value)
 	HP -= value;
 }
 
-int Bear::GetXP(Player &p)
+int Bear::GetXP(Player& p)
 {
 	p.SetXP(this);
 	return this->XP;

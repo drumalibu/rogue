@@ -8,6 +8,7 @@ Weapon::Weapon()
 	DMG = 0;
 	SPD = 0;
 	MPD = 0;
+	WGT = 0;
 }
 
 Weapon::~Weapon()
@@ -15,7 +16,7 @@ Weapon::~Weapon()
 
 }
 
-int Weapon::Strike(Player &p)
+int Weapon::Strike(Player& p)
 {
 	return 0;
 }
@@ -41,6 +42,7 @@ Sword::Sword()
 	DMG = 15;
 	SPD = 20;
 	MPD = 0;
+	WGT = 5;
 }
 
 Sword::~Sword()
@@ -54,6 +56,7 @@ Mace::Mace()
 	DMG = 25;
 	SPD = 30;
 	MPD = 0;
+	WGT = 10;
 }
 
 Mace::~Mace()
@@ -67,6 +70,7 @@ SpellBook::SpellBook()
 	DMG = 30;
 	SPD = 10;
 	MPD = 15;
+	WGT = 2;
 }
 
 SpellBook::~SpellBook()
@@ -74,7 +78,7 @@ SpellBook::~SpellBook()
 
 }
 
-int Sword::Strike(Player &p)
+int Sword::Strike(Player& p)
 {
 	if (p.GetSP() >= SPD)
 	{
@@ -87,7 +91,7 @@ int Sword::Strike(Player &p)
 	}
 }
 
-int Mace::Strike(Player &p)
+int Mace::Strike(Player& p)
 {
 	if (p.GetSP() >= SPD)
 	{
@@ -100,7 +104,7 @@ int Mace::Strike(Player &p)
 	}
 }
 
-int SpellBook::Strike(Player &p)
+int SpellBook::Strike(Player& p)
 {
 	if (p.GetMP() >= MPD && p.GetSP() >= SPD)
 	{

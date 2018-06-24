@@ -2,7 +2,7 @@
 #include "Player.h"
 #include "Weapon.h"
 #include "Enemy.h"
-#include <string>
+#include "Armor.h"
 #include <iostream>
 
 Player::Player()
@@ -11,10 +11,12 @@ Player::Player()
 	HP = 0;
 	MP = 0;
 	SP = 0;
+	DMGREDUCTION = 0;
 	XP = 0;
 	NEXTLVLXP = 0;
 	RACE = "";
 	WEAPON = "";
+	ARMOR = "";
 }
 
 Player::Player(int RACE, int WEAPON)
@@ -31,7 +33,8 @@ Player::Player(int RACE, int WEAPON)
 		MAXMP = 30;
 		SP = 200;
 		MAXSP = 200;
-
+		ARMOR = "Нет брони";
+        DMGREDUCTION = 0;
 	}
 	else if (RACE == Human)
 	{
@@ -42,6 +45,8 @@ Player::Player(int RACE, int WEAPON)
 		MAXMP = 50;
 		SP = 170;
 		MAXSP = 50;
+        ARMOR = "Нет брони";
+        DMGREDUCTION = 0;
 	}
 	else if (RACE == Elf)
 	{
@@ -52,6 +57,8 @@ Player::Player(int RACE, int WEAPON)
 		MAXMP = 80;
 		SP = 120;
 		MAXSP = 120;
+        ARMOR = "Нет брони";
+        DMGREDUCTION = 0;
 	}
 	switch (WEAPON)
 	{
@@ -63,6 +70,8 @@ Player::Player(int RACE, int WEAPON)
 		break;
 	case ChooseSpellBook:
 		this->WEAPON = "Книга заклинаний";
+		break;
+	default:
 		break;
 	}
 }
@@ -77,7 +86,7 @@ Player::~Player()
 //	return MP + value;
 //}
 
-int Player::Strike(Weapon *w, Player &p, Enemy *e)
+int Player::Strike(Weapon* w, Player& p, Enemy* e)
 {
 	e->SetHP(w->GetDMG());
 	return w->Strike(p);
@@ -124,7 +133,7 @@ int Player::GetHP()
 	return this->HP;
 }
 
-void Player::SetXP(Enemy *e)
+void Player::SetXP(Enemy* e)
 {
 	XP += e->XP;
 	if (XP >= NEXTLVLXP)
@@ -153,10 +162,16 @@ void Player::SetXP(Enemy *e)
 		SP = MAXSP;
 		XP -= NEXTLVLXP;
 		NEXTLVLXP *= 1.5;
+		std::cout << "Ваш уровень повышен!" << std::endl << std::endl;
 	}
 }
 
-void Player::SetWPN(Weapon *NewWPN)
+void Player::SetWPN(Weapon* NewWPN)
 {
 	this->WEAPON = NewWPN->Name;
+}
+
+void Player::SetArmor(Armor* NewARM)
+{
+    this->ARMOR = NewARM->NAME;
 }
