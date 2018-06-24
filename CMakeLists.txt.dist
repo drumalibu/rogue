@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.10)
+project(rogue)
+
+set(CMAKE_CXX_STANDARD 11)
+set(SOURCE_EXE main.cpp)
+
+include_directories(Headers)
+
+set(SOURCE_LIB_E Headers/Enemy.cpp)
+set(SOURCE_LIB_W Headers/Weapon.cpp)
+set(SOURCE_LIB_P Headers/Player.cpp)
+set(SOURCE_LIB_A Headers/Armor.cpp)
+
+add_library(Enemy STATIC ${SOURCE_LIB_E})
+add_library(Weapons STATIC ${SOURCE_LIB_W})
+add_library(Player STATIC ${SOURCE_LIB_P})
+add_library(Armor STATIC ${SOURCE_LIB_A})
+
+add_executable(main ${SOURCE_EXE})
+
+target_link_libraries(main Enemy Weapons Player Armor)
