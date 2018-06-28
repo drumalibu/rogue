@@ -16,24 +16,24 @@ Armor::Armor()
 
 void Armor::GetInfo()
 {
-    std::cout << "Название: " << NAME << std::endl;
-    std::cout << "Класс брони: " << ARMOR_CLASS << std::endl;
-    std::cout << "Вес: " << WEIGHT << std::endl;
-    std::cout << "Сопротивление урону: " << DMG_REDUCTION << std::endl;
-    std::cout << "Требуемый уровень: " << LVL_REQ << std::endl;
+    std::cout << "Name: " << NAME << std::endl;
+    std::cout << "Armor Class: " << ARMOR_CLASS << std::endl;
+    std::cout << "Weight: " << WEIGHT << std::endl;
+    std::cout << "Damage Reduction: " << DMG_REDUCTION << std::endl;
+    std::cout << "Level Requirement: " << LVL_REQ << std::endl;
 }
 
 LightArmor::LightArmor()
 {
-    ARMOR_CLASS = "Легкая броня";
+    ARMOR_CLASS = "Light Armor";
 }
 
 HeavyArmor::HeavyArmor()
 {
-    ARMOR_CLASS = "Тяжелая броня";
+    ARMOR_CLASS = "Heavy Armor";
 }
 
 Robe::Robe()
 {
-    ARMOR_CLASS = "Роба";
+    ARMOR_CLASS = "Robe";
 }

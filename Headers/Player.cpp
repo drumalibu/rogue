@@ -32,50 +32,50 @@ Player::Player(int RACE, int WEAPON)
 	STAT.BLEEDING = false;
 	if (RACE == Orc)
 	{
-		this->RACE = "Орк";
+		this->RACE = "Orc";
 		HP = 150;
 		MAXHP = 150;
 		MP = 30;
 		MAXMP = 30;
 		SP = 200;
 		MAXSP = 200;
-		ARMOR = "Нет брони";
+		ARMOR = "N/A";
         DMGREDUCTION = 0;
 	}
 	else if (RACE == Human)
 	{
-		this->RACE = "Человек";
+		this->RACE = "Human";
 		HP = 110;
 		MAXHP = 110;
 		MP = 50;
 		MAXMP = 50;
 		SP = 170;
 		MAXSP = 50;
-        ARMOR = "Нет брони";
+        ARMOR = "N/A";
         DMGREDUCTION = 0;
 	}
 	else if (RACE == Elf)
 	{
-		this->RACE = "Эльф";
+		this->RACE = "Elf";
 		HP = 80;
 		MAXHP = 80;
 		MP = 80;
 		MAXMP = 80;
 		SP = 120;
 		MAXSP = 120;
-        ARMOR = "Нет брони";
+        ARMOR = "N/A";
         DMGREDUCTION = 0;
 	}
 	switch (WEAPON)
 	{
 	case ChooseSword:
-		this->WEAPON = "Меч";
+		this->WEAPON = "Sword";
 		break;
 	case ChooseMace:
-		this->WEAPON = "Булава";
+		this->WEAPON = "Mace";
 		break;
 	case ChooseSpellBook:
-		this->WEAPON = "Книга заклинаний";
+		this->WEAPON = "Spell Book";
 		break;
 	default:
 		break;
@@ -95,13 +95,13 @@ int Player::Strike(Weapon* w, Player& p, Enemy* e)
 
 void Player::GetInfo()
 {
-	std::cout << "Раса: " << RACE << std::endl;
-	std::cout << "Уровень: " << LVL << std::endl;
-	std::cout << "Опыт: " << XP << " / " << NEXTLVLXP << std::endl;
-	std::cout << "Здоровье: " << HP << " / " << MAXHP << std::endl;
-	std::cout << "Мана: " << MP << " / " << MAXMP << std::endl;
-	std::cout << "Выносливость: " << SP << " / " << MAXSP << std::endl;
-	std::cout << "Оружие: " << WEAPON << std::endl;
+	std::cout << "Race: " << RACE << std::endl;
+	std::cout << "Level: " << LVL << std::endl;
+	std::cout << "Experience: " << XP << " / " << NEXTLVLXP << std::endl;
+	std::cout << "Health: " << HP << " / " << MAXHP << std::endl;
+	std::cout << "Mana: " << MP << " / " << MAXMP << std::endl;
+	std::cout << "Stamina: " << SP << " / " << MAXSP << std::endl;
+	std::cout << "Weapon: " << WEAPON << std::endl;
 }
 
 void Player::SetMP(int value)
@@ -140,19 +140,19 @@ void Player::SetXP(Enemy* e)
 	if (XP >= NEXTLVLXP)
 	{
 		LVL += 1;
-		if (RACE == "Орк")
+		if (RACE == "Orc")
 		{
 			MAXHP += 30;
 			MAXSP += 30;
 			MAXMP += 10;
 		}
-		else if (RACE == "Человек")
+		else if (RACE == "Human")
 		{
 			MAXHP += 20;
 			MAXSP += 20;
 			MAXMP += 15;
 		}
-		else if (RACE == "Эльф")
+		else if (RACE == "Elf")
 		{
 			MAXHP += 15;
 			MAXSP += 15;
@@ -163,7 +163,7 @@ void Player::SetXP(Enemy* e)
 		SP = MAXSP;
 		XP -= NEXTLVLXP;
 		NEXTLVLXP *= 1.5;
-		std::cout << "Ваш уровень повышен!" << std::endl << std::endl;
+		std::cout << "Your level has increased!" << std::endl << std::endl;
 	}
 }
 

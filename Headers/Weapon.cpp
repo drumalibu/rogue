@@ -43,7 +43,7 @@ int Weapon::GetWGT()
 
 Sword::Sword()
 {
-	Name = "Меч";
+	Name = "Sword";
 	DMG = 15;
 	SPD = 20;
 	MPD = 0;
@@ -57,7 +57,7 @@ Sword::~Sword()
 
 Mace::Mace()
 {
-	Name = "Булава";
+	Name = "Mace";
 	DMG = 25;
 	SPD = 30;
 	MPD = 0;
@@ -71,7 +71,7 @@ Mace::~Mace()
 
 SpellBook::SpellBook()
 {
-	Name = "Книга заклинаний";
+	Name = "Spell Book";
 	DMG = 30;
 	SPD = 10;
 	MPD = 15;

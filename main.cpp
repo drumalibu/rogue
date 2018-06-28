@@ -24,21 +24,21 @@ int main()
 	restart:
 	///////////////////////
 
-	std::cout << "Выберите расу:\n1 - Орк\n2 - Человек\n3 - Эльф\n";
+	std::cout << "Choose race:\n1 - Orc\n2 - Human\n3 - Elf\n";
 	std::cin >> r;
 
 	while (r < 1 || r > 3)
 	{
-		std::cout << "Введите корректное значение!" << std::endl;
+		std::cout << "Enter correct value!" << std::endl;
 		std::cin >> r;
 	}
 
-	std::cout << "\nВыберите оружие:\n1 - Меч\n2 - Булава\n3 - Книга заклинаний\n";
+	std::cout << "\nChoose weapon:\n1 - Sword\n2 - Mace\n3 - Spell Book\n";
 	std::cin >> w;
 
 	while (w < 1 || w > 3)
 	{
-		std::cout << "Введите корректное значение!" << std::endl;
+		std::cout << "Enter correct value!" << std::endl;
 		std::cin >> w;
 	}
 
@@ -82,8 +82,8 @@ int main()
 		default:
 			enemy = nullptr;
 		}
-		std::cout << "\nНа вас напал " << enemy->GetName() << "!" << std::endl;
-		std::cout << "\nЧто делать?\n1 - Ударить\n2 - Попробовать убежать (шанс 50%)\n3 - Получить информацию о себе\n4 - Получить информацию о противнике\n5 - Сделать сэппуку\n";
+		std::cout << "\nYou have been attacked by " << enemy->GetName() << "!" << std::endl;
+		std::cout << "\nWhat should you do?\n1 - Attack\n2 - Try to escape (50% chance)\n3 - Get your status\n4 - Get enemy's status\n5 - Do seppuku\n";
 		std::cin >> w;
 		while (enemy->GetHP() > 0)
 		{
@@ -92,28 +92,28 @@ int main()
 			case 1:
 				if (p.GetSP() >= weapon->GetSPD() && p.GetMP() >= weapon->GetMPD())
 				{
-					std::cout << "\nВы бьете " << enemy->GetName() << " нанося " << p.Strike(weapon, p, enemy) << " урона!" << std::endl;
+					std::cout << "\nYou attack " << enemy->GetName() << " inflicting " << p.Strike(weapon, p, enemy) << " damage!" << std::endl;
 					if (enemy->GetHP() > 0)
-						std::cout << "\nУ противника осталось " << enemy->GetHP() << " ед. здоровья" << std::endl;
+						std::cout << "\nEnemy has " << enemy->GetHP() << " health points left" << std::endl;
 				}
 				else
 				{
 					if (p.GetSP() < weapon->GetSPD())
-						std::cout << "\nУ вас не хватает выносливости!" << std::endl;
+						std::cout << "\nYou don't have enough stamina!" << std::endl;
 					if (p.GetMP() < weapon->GetMPD())
-						std::cout << "У вас не хватает маны!" << std::endl << std::endl;
-					std::cout << "У противника осталось " << enemy->GetHP() << " ед. здоровья" << std::endl;
+						std::cout << "You don't have enough mana!" << std::endl << std::endl;
+					std::cout << "Enemy has " << enemy->GetHP() << " health points left" << std::endl;
 				}
 				if (enemy->GetHP() <= 0)
 				{
-					std::cout << '\n' << enemy->GetName() << " Повержен!" << " Получено " << enemy->GetXP() << " опыта." << std::endl;
+					std::cout << '\n' << enemy->GetName() << " has been defeated!" << " You earned " << enemy->GetXP() << " experience." << std::endl;
 					enemy->PutXP(p);
 					delete enemy;
 					enemy = nullptr;
 				}
 				else
 				{
-					std::cout << '\n' << enemy->GetName() << " бьет в ответ нанося " << enemy->Strike(p) << " урона!" << std::endl;
+					std::cout << '\n' << enemy->GetName() << " attacks back inflicting " << enemy->Strike(p) << " damage!" << std::endl;
 					if (p.GetHP() <= 0)
 					{
 						death = true;
@@ -124,14 +124,14 @@ int main()
 				if (rand() % 2)
 				{
 					dodge = true;
-					std::cout << "\nВам удалось скрыться!" << std::endl;
+					std::cout << "\nYou have been escaped!" << std::endl;
 					delete enemy;
 					enemy = nullptr;
 				}
 				else
 				{
 					dodge = false;
-					std::cout << "\nВам не удалось скрыться!" << std::endl;
+					std::cout << "\nYou haven't been escaped!" << std::endl;
 				}
 				break;
 			case 3:
@@ -156,7 +156,7 @@ int main()
 				break;
 			else
 			{
-				std::cout << "\nЧто делать?\n1 - Ударить\n2 - Попробовать убежать (шанс 50%)\n3 - Получить информацию о себе\n4 - Получить информацию о противнике\n5 - Сделать сэппуку\n";
+				std::cout << "\nWhat should you do?\n1 - Attack\n2 - Try to escape (50% chance)\n3 - Get your status\n4 - Get enemy's status\n5 - Do seppuku\n";
 				std::cin >> w;
 			}
 		}
@@ -164,12 +164,12 @@ int main()
 
 	if (death)
 	{
-		std::cout << "\n\t\t=================ВЫ ПОГИБЛИ!!!=================\n" << std::endl << std::endl;
-		std::cout << "Начать заново? (1 - Да, 2 - нет)" << std::endl;
+		std::cout << "\n\t\t=================YOU ARE DEAD!!!=================\n" << std::endl << std::endl;
+		std::cout << "Start again? (1 - Yes, 2 - No)" << std::endl;
 		std::cin >> w;
 		while (w < 1 || w > 2)
 		{
-			std::cout << "Введите корректное значение!" << std::endl;
+			std::cout << "Enter correct value!" << std::endl;
 			std::cin >> w;
 		}
 		if (w == 1)

@@ -1,15 +1,15 @@
 #pragma once
 #include "Enemy.h"
 #include "Player.h"
-#include <ctime>
+/*#include <ctime>*/
 #include <iostream>
 
 void Enemy::GetInfo()
 {
-	std::cout << "Противник: " << NAME << std::endl;
-	std::cout << "Здоровье: " << HP << std::endl;
-	std::cout << "Урон: " << DMG << std::endl;
-	std::cout << "Опыт: " << XP << std::endl;
+	std::cout << "Enemy: " << NAME << std::endl;
+	std::cout << "Health: " << HP << std::endl;
+	std::cout << "Damage: " << DMG << std::endl;
+	std::cout << "Experience: " << XP << std::endl;
 }
 
 const char* Enemy::GetName()
@@ -41,7 +41,7 @@ void Enemy::SetHP(int value, Player &p)
 
 Spider::Spider()
 {
-	NAME = "Паук";
+	NAME = "Spider";
 	HP = 15;
 	DMG = 8;
 	XP = 200;
@@ -70,7 +70,7 @@ int Spider::GetPOISON()
 
 Wolf::Wolf()
 {
-	NAME = "Волк";
+	NAME = "Wolf";
 	HP = 25;
 	DMG = 10;
 	XP = 300;
@@ -99,7 +99,7 @@ int Wolf::GetBLEEDING()
 
 Bear::Bear()
 {
-	NAME = "Медведь";
+	NAME = "Bear";
 	HP = 35;
 	DMG = 15;
 	XP = 400;
@@ -112,7 +112,7 @@ Bear::~Bear()
 
 int Bear::Strike(Player& p)
 {
-	srand(time(0));
+	/*srand(time(0));*/
 	int damage = DMG - (DMG * (p.DMGREDUCTION / 100));
 	if (!rand() % STUN / 100 && !p.STAT.STUN)
 		p.STAT.STUN = true;
