@@ -16,24 +16,29 @@ Weapon::~Weapon()
 
 }
 
-int Weapon::Strike(Player& p)
+const char* Weapon::GetName()
 {
-	return 0;
-}
-
-int Weapon::GetSPD()
-{
-	return 0;
-}
-
-int Weapon::GetMPD()
-{
-	return 0;
+	return Name;
 }
 
 int Weapon::GetDMG()
 {
-	return 0;
+	return DMG;
+}
+
+int Weapon::GetSPD()
+{
+	return SPD;
+}
+
+int Weapon::GetMPD()
+{
+	return MPD;
+}
+
+int Weapon::GetWGT()
+{
+    return WGT;
 }
 
 Sword::Sword()
@@ -116,49 +121,4 @@ int SpellBook::Strike(Player& p)
 	{
 		return 0;
 	}
-}
-
-int Sword::GetSPD()
-{
-	return this->SPD;
-}
-
-int Mace::GetSPD()
-{
-	return this->SPD;
-}
-
-int SpellBook::GetSPD()
-{
-	return this->SPD;
-}
-
-int Sword::GetMPD()
-{
-	return this->MPD;
-}
-
-int Mace::GetMPD()
-{
-	return this->MPD;
-}
-
-int SpellBook::GetMPD()
-{
-	return this->MPD;
-}
-
-int Sword::GetDMG()
-{
-	return this->DMG;
-}
-
-int Mace::GetDMG()
-{
-	return this->DMG;
-}
-
-int SpellBook::GetDMG()
-{
-	return this->DMG;
 }

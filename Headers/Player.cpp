@@ -14,9 +14,12 @@ Player::Player()
 	DMGREDUCTION = 0;
 	XP = 0;
 	NEXTLVLXP = 0;
-	RACE = "";
-	WEAPON = "";
-	ARMOR = "";
+	RACE = nullptr;
+	WEAPON = nullptr;
+	ARMOR = nullptr;
+	STAT.STUN = false;
+	STAT.POISON = false;
+	STAT.BLEEDING = false;
 }
 
 Player::Player(int RACE, int WEAPON)
@@ -24,6 +27,9 @@ Player::Player(int RACE, int WEAPON)
 	LVL = 1;
 	XP = 0;
 	NEXTLVLXP = 1000;
+	STAT.STUN = false;
+	STAT.POISON = false;
+	STAT.BLEEDING = false;
 	if (RACE == Orc)
 	{
 		this->RACE = "Орк";
@@ -83,7 +89,7 @@ Player::~Player()
 
 int Player::Strike(Weapon* w, Player& p, Enemy* e)
 {
-	e->SetHP(w->GetDMG());
+	e->SetHP(w->GetDMG(), p);
 	return w->Strike(p);
 }
 
@@ -105,7 +111,7 @@ void Player::SetMP(int value)
 
 int Player::GetMP()
 {
-	return this->MP;
+	return MP;
 }
 
 void Player::SetSP(int value)
@@ -115,7 +121,7 @@ void Player::SetSP(int value)
 
 int Player::GetSP()
 {
-	return this->SP;
+	return SP;
 }
 
 void Player::SetHP(int value)
@@ -125,7 +131,7 @@ void Player::SetHP(int value)
 
 int Player::GetHP()
 {
-	return this->HP;
+	return HP;
 }
 
 void Player::SetXP(Enemy* e)
@@ -163,10 +169,10 @@ void Player::SetXP(Enemy* e)
 
 void Player::SetWPN(Weapon* NewWPN)
 {
-	this->WEAPON = NewWPN->Name;
+	WEAPON = NewWPN->GetName();
 }
 
 void Player::SetArmor(Armor* NewARM)
 {
-    this->ARMOR = NewARM->NAME;
+    ARMOR = NewARM->NAME;
 }

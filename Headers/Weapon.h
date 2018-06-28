@@ -13,15 +13,16 @@ public:
 	/*friend class Player;*/
 	Weapon();
 	virtual ~Weapon();
-	const char* Name;
-	virtual int Strike(Player& p);
-	virtual int GetMPD();
-	virtual int GetSPD();
-	virtual int GetDMG();
-
+	virtual int Strike(Player& p) = 0;
+	const char* GetName();
+	int GetDMG();
+	int GetSPD();
+	int GetMPD();
+	int GetWGT();
 protected:
-	int SPD;
+	const char* Name;
 	int DMG;
+	int SPD;
 	int MPD;
 	int WGT;
 };
@@ -32,9 +33,6 @@ public:
 	Sword();
 	~Sword() override;
 	int Strike(Player& p) override;
-	int GetSPD() override;
-	int GetMPD() override;
-	int GetDMG() override;
 };
 
 class Mace : public Weapon
@@ -43,9 +41,6 @@ public:
 	Mace();
 	~Mace() override;
 	int Strike(Player& p) override;
-	int GetMPD() override;
-	int GetSPD() override;
-	int GetDMG() override;
 };
 
 class SpellBook : public Weapon
@@ -54,7 +49,4 @@ public:
 	SpellBook();
 	~SpellBook() override;
 	int Strike(Player& p) override;
-	int GetSPD() override;
-	int GetMPD() override;
-	int GetDMG() override;
 };

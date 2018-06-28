@@ -1,6 +1,7 @@
 #pragma once
 #include "Enemy.h"
 #include "Player.h"
+#include <ctime>
 #include <iostream>
 
 void Enemy::GetInfo()
@@ -31,9 +32,11 @@ void Enemy::PutXP(Player &p)
 	p.SetXP(this);
 }
 
-void Enemy::SetHP(int value)
+void Enemy::SetHP(int value, Player &p)
 {
 	HP -= value;
+	if (HP <= 0)
+		PutXP(p);
 }
 
 Spider::Spider()
@@ -52,8 +55,17 @@ Spider::~Spider()
 int Spider::Strike(Player& p)
 {
 	int damage = DMG - (DMG * (p.DMGREDUCTION / 100));
+	if (!p.STAT.POISON)
+		p.STAT.POISON = true;
+	/*if (p.STAT.POISON)
+		damage += POISON;*/
 	p.SetHP(-damage);
 	return damage;
+}
+
+int Spider::GetPOISON()
+{
+	return POISON;
 }
 
 Wolf::Wolf()
@@ -72,8 +84,17 @@ Wolf::~Wolf()
 int Wolf::Strike(Player& p)
 {
 	int damage = DMG - (DMG * (p.DMGREDUCTION / 100));
+	if (!p.STAT.BLEEDING)
+		p.STAT.BLEEDING = true;
+	/*if (p.STAT.BLEEDING)
+		damage += BLEEDING;*/
 	p.SetHP(-damage);
 	return damage;
+}
+
+int Wolf::GetBLEEDING()
+{
+	return BLEEDING;
 }
 
 Bear::Bear()
@@ -91,7 +112,15 @@ Bear::~Bear()
 
 int Bear::Strike(Player& p)
 {
+	srand(time(0));
 	int damage = DMG - (DMG * (p.DMGREDUCTION / 100));
+	if (!rand() % STUN / 100 && !p.STAT.STUN)
+		p.STAT.STUN = true;
 	p.SetHP(-damage);
 	return damage;
+}
+
+int Bear::GetSTUN()
+{
+	return STUN;
 }

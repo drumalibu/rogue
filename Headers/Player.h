@@ -6,6 +6,13 @@ class Enemy;
 
 class Armor;
 
+struct Status
+{
+    bool BLEEDING;
+    bool POISON;
+    bool STUN;
+};
+
 class Player
 {
 public:
@@ -20,23 +27,24 @@ public:
 	void SetWPN(Weapon* NewWPN);
     void SetArmor(Armor* NewARM);
 	friend class Enemy;
+	friend class Weapon;
 	friend class Sword;
 	friend class Mace;
 	friend class SpellBook;
 	friend class Spider;
 	friend class Bear;
 	friend class Wolf;
-
 private:
 #define Orc 1
 #define Human 2
 #define Elf 3
+    Status STAT;
 	unsigned short LVL;
-	short HP; 
+	short HP;
 	short MAXHP;
-	short MP; 
+	short MP;
 	short MAXMP;
-	short SP; 
+	short SP;
 	short MAXSP;
 	short DMGREDUCTION;
 	unsigned short XP;

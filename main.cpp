@@ -1,8 +1,9 @@
+#pragma once
 #include "Headers/Player.h"
 #include "Headers/Weapon.h"
 #include "Headers/Enemy.h"
 #include <iostream>
-#include <time.h>
+#include <ctime>
 
 int main()
 {
