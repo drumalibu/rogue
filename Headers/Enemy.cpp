@@ -11,6 +11,31 @@ void Enemy::GetInfo()
 	std::cout << "Опыт: " << XP << std::endl;
 }
 
+const char* Enemy::GetName()
+{
+    return NAME;
+}
+
+int Enemy::GetHP()
+{
+	return HP;
+}
+
+int Enemy::GetXP()
+{
+	return XP;
+}
+
+void Enemy::PutXP(Player &p)
+{
+	p.SetXP(this);
+}
+
+void Enemy::SetHP(int value)
+{
+	HP -= value;
+}
+
 Spider::Spider()
 {
 	NAME = "Паук";
@@ -29,27 +54,6 @@ int Spider::Strike(Player& p)
 	int damage = DMG - (DMG * (p.DMGREDUCTION / 100));
 	p.SetHP(-damage);
 	return damage;
-}
-
-const char* Spider::GetName()
-{
-	return this->NAME;
-}
-
-int Spider::GetHP()
-{
-	return this->HP;
-}
-
-void Spider::SetHP(int value)
-{
-	HP -= value;
-}
-
-int Spider::GetXP(Player& p)
-{
-	p.SetXP(this);
-	return this->XP;
 }
 
 Wolf::Wolf()
@@ -72,27 +76,6 @@ int Wolf::Strike(Player& p)
 	return damage;
 }
 
-const char* Wolf::GetName()
-{
-	return this->NAME;
-}
-
-int Wolf::GetHP()
-{
-	return this->HP;
-}
-
-void Wolf::SetHP(int value)
-{
-	HP -= value;
-}
-
-int Wolf::GetXP(Player& p)
-{
-	p.SetXP(this);
-	return this->XP;
-}
-
 Bear::Bear()
 {
 	NAME = "Медведь";
@@ -111,25 +94,4 @@ int Bear::Strike(Player& p)
 	int damage = DMG - (DMG * (p.DMGREDUCTION / 100));
 	p.SetHP(-damage);
 	return damage;
-}
-
-const char* Bear::GetName()
-{
-	return this->NAME;
-}
-
-int Bear::GetHP()
-{
-	return this->HP;
-}
-
-void Bear::SetHP(int value)
-{
-	HP -= value;
-}
-
-int Bear::GetXP(Player& p)
-{
-	p.SetXP(this);
-	return this->XP;
 }

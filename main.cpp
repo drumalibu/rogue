@@ -10,7 +10,6 @@ int main()
 	setlocale(0, "rus");
 
 	int r, w;
-	//int nww;
 	bool dodge, death = false;
 
 	Weapon* weapon = nullptr;
@@ -44,13 +43,13 @@ int main()
 
 	switch (w)
 	{
-	case ChooseSword:				//ЗАМЕНИТЬ//
+	case ChooseSword:
 		weapon = &s;
 		break;
-	case ChooseMace:				   //НА//
+	case ChooseMace:
 		weapon = &m;
 		break;
-	case ChooseSpellBook:		//WEAPON *? = new ??//
+	case ChooseSpellBook:
 		weapon = &sb;
 		break;
 	default:
@@ -63,30 +62,6 @@ int main()
 	std::cout << std::endl;
 	
 	p.GetInfo();
-
-	/*std::cout << "Smenit' pushku????" << std::endl;
-	std::cin >> nww;
-	if (nww == 1)
-	{
-		std::cout << "\nВыберите оружие:\n1 - Меч\n2 - Булава\n3 - Книга заклинаний\n";
-		std::cin >> w;
-		switch (w)
-		{
-		case ChooseSword:
-			weapon = &s;
-			break;
-		case ChooseMace:
-			weapon = &m;
-			break;
-		case ChooseSpellBook:
-			weapon = &sb;
-			break;
-		}
-		p.SetWPN(weapon);
-	}
-
-	p.GetInfo();
-	getch();*/
 
 	while (p.GetHP() > 0)
 	{
@@ -130,7 +105,8 @@ int main()
 				}
 				if (enemy->GetHP() <= 0)
 				{
-					std::cout << '\n' << enemy->GetName() << " Повержен!" << " Получено " << enemy->GetXP(p) << " опыта." << std::endl;
+					std::cout << '\n' << enemy->GetName() << " Повержен!" << " Получено " << enemy->GetXP() << " опыта." << std::endl;
+					enemy->PutXP(p);
 					delete enemy;
 					enemy = nullptr;
 				}

@@ -12,7 +12,7 @@ public:
 	Player();
 	Player(int RACE, int WEAPON);
 	~Player();
-	int Strike(Weapon* w, Player& p, Enemy* e); //////НАПИСАТЬ БРОНЮ!!!!//////СДЕЛАТЬ ИНВЕНТАРЬ!!!!///////
+	int Strike(Weapon* w, Player& p, Enemy* e);
 	void GetInfo();
 	int GetMP();
 	int GetSP();

@@ -81,11 +81,6 @@ Player::~Player()
 
 }
 
-//int Player::SetMP(int value)
-//{
-//	return MP + value;
-//}
-
 int Player::Strike(Weapon* w, Player& p, Enemy* e)
 {
 	e->SetHP(w->GetDMG());
