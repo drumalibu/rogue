@@ -27,6 +27,8 @@ Player::Player(int RACE, int WEAPON)
 	LVL = 1;
 	XP = 0;
 	NEXTLVLXP = 1000;
+    ARMOR = "N/A";
+    DMGREDUCTION = 0;
 	STAT.STUN = false;
 	STAT.POISON = false;
 	STAT.BLEEDING = false;
@@ -39,8 +41,6 @@ Player::Player(int RACE, int WEAPON)
 		MAXMP = 30;
 		SP = 200;
 		MAXSP = 200;
-		ARMOR = "N/A";
-        DMGREDUCTION = 0;
 	}
 	else if (RACE == Human)
 	{
@@ -51,8 +51,6 @@ Player::Player(int RACE, int WEAPON)
 		MAXMP = 50;
 		SP = 170;
 		MAXSP = 50;
-        ARMOR = "N/A";
-        DMGREDUCTION = 0;
 	}
 	else if (RACE == Elf)
 	{
@@ -63,8 +61,6 @@ Player::Player(int RACE, int WEAPON)
 		MAXMP = 80;
 		SP = 120;
 		MAXSP = 120;
-        ARMOR = "N/A";
-        DMGREDUCTION = 0;
 	}
 	switch (WEAPON)
 	{
